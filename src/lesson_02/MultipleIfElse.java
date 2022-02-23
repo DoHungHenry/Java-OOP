@@ -1,17 +1,25 @@
 package lesson_02;
 
+import java.util.Scanner;
+
 public class MultipleIfElse {
     public static void main(String[] args) {
         //---true--|---false--
-        //---not sell--|---18->50--unlimited--|--not sell
+        //---not sell--|---18->50--unlimited--|--2 wine can
 
-        int age = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter your age");
+        int age = scanner.nextInt();
+
+        // redundant: line 17: age >= 18
         if (age < 18) {
             System.out.println("not enough age, no sell");
-        } else if(age >= 18) {
+        } else if(age <= 50) {
             System.out.println("sell unlimited");
         } else {
-            System.out.println("too old");
+            System.out.println("2 can");
         }
+
+        //distinguish & va | : bitwise Operator
     }
 }
