@@ -3,11 +3,11 @@ package lesson_02;
 public class TernaryOperator {
     public static void main(String[] args) {
         boolean isHeOnTime = true;
-        int hour = -1;
-
-        if (isHeOnTime){
-            hour = 7;
-        }
+//        int hour = -1;
+//
+//        if (isHeOnTime){
+//            hour = 7;
+//        }
 
         //Ternary Operator (toán tử ba ngôi)
 
