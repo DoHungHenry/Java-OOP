@@ -7,7 +7,8 @@ public class Lab_03 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        double weight;
+
+        double weight;;
         do {
             System.out.println("Please enter your weight: ");
             while (!scanner.hasNextDouble()) {
