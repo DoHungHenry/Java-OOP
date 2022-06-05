@@ -13,6 +13,9 @@ public class Lesson_03_lab_04 {
     }
 
     public static int[] mergeSortedArrs(int[] a, int[] b){
+        if (a == null || a.length == 0) return b;
+        if (b == null || b.length == 0) return a;
+
         int aLength = a.length;
         int bLength = b.length;
         int[] Arr = new int[aLength + bLength];
