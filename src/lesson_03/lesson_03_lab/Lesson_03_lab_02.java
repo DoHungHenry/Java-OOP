@@ -10,11 +10,12 @@ public class Lesson_03_lab_02 {
         for (int i = 0; i < intArr.length; i++) {
             if (intArr[i] < minOfInArr){
                 minOfInArr = intArr[i];
-            }
+            };
             if (intArr[i] > maxOfIntArr){
                 maxOfIntArr = intArr[i];
-            }
+            };
         }
+
         System.out.printf("Min number is: " + minOfInArr + "\n");
         System.out.printf("Max number is: " + maxOfIntArr + "\n");
     }
