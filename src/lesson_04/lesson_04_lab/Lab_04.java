@@ -16,8 +16,6 @@ public class Lab_04 {
         arr.add(101);
         arr.add(102);
 
-        int inputNum = 0;
-
         switch (getUserOption()){
             case 1:
                 int randomNum = getRandomNum(10);
@@ -48,8 +46,7 @@ public class Lab_04 {
     }
 
     private static int getRandomNum(int num) {
-        int randomNum = new SecureRandom().nextInt(num);
-        return randomNum;
+        return new SecureRandom().nextInt(num);
     }
 
     private static ArrayList<Integer> addNumToArrayList(int num, @NotNull ArrayList<Integer> arr) {
@@ -71,7 +68,7 @@ public class Lab_04 {
         }
         return maxOfArrList;
     }
-    private static Integer getMinNum(@NotNull ArrayList<Integer> arr) {
+    private static Integer getMinNum(ArrayList<Integer> arr) {
         int minOfArrList = arr.get(0);
 
         for (int i = 0; i < arr.size(); i++) {
