@@ -36,5 +36,13 @@ public class ArrayListLearning {
             }
         }
         System.out.println(myArrList);
+
+        // isEmpty(), contains(), IndexOf
+        System.out.println(myArrList.isEmpty());
+        System.out.println(myArrList.contains(1));
+        System.out.println(myArrList.contains(2));
+
+        // Get the first index of value in ArrayList
+        System.out.println(myArrList.indexOf(4));
     }
 }
