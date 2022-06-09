@@ -34,5 +34,8 @@ public class ArrayLearning2 {
 
         List<Integer> changeSetToList = new ArrayList<>(set);
         System.out.println(changeSetToList);
+
+        //Get a SubArrList
+        List<Integer> get3FirstIndex = changeSetToList.subList(0,3);
     }
 }
