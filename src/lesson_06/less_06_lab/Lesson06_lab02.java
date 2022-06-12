@@ -9,7 +9,6 @@ public class Lesson06_lab02 {
     public static void main(String[] args) {
 
         String myPassword = "password123";
-
         int userInputTimes = 1;
 
         while (userInputTimes < 4){
@@ -23,8 +22,6 @@ public class Lesson06_lab02 {
                 System.out.println("Your input times is finish, so then your account is locked, please contact us to unlock");
             }
         }
-
-
     }
 
     private static String getUserPassword(){
