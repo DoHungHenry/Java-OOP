@@ -50,20 +50,20 @@ public class StringLearning {
         //System.out.println("myName1 == myName3: " + (myName1 == myName3));
 
         // Immutable String
-        String badWords = "    mm, cm, dm, bm     ";
+        // String badWords = "    mm, cm, dm, bm     ";
 
         // This is ignored
         // badWords.replace("cm", "**");
 
         // we need to declare new string
-        String filterBadWords = badWords.replace("cm", "**");
-        System.out.println(badWords);
+        // String filterBadWords = badWords.replace("cm", "**");
+        // System.out.println(badWords);
 
         // Trim spaces
         //System.out.println(badWords.trim());
 
         // SubString, , split
-        String w3 = "https://w3school.com";
+        // String w3 = "https://w3school.com";
         // from start to 5, 5 is not in subString
         //System.out.println(w3.substring(0, 5));
         // from x to end
@@ -78,12 +78,25 @@ public class StringLearning {
 
         // Split
         //String[] splitW3 = w3.split("");
-        String[] splitW3 = w3.split("//");
-        System.out.println(Arrays.toString(splitW3));
+        // String[] splitW3 = w3.split("//");
+        // System.out.println(Arrays.toString(splitW3));
 
         // RegularExpression (Regex)
-        String cookingTimeStr = "180m";
-        String cookingTime = cookingTimeStr.replaceAll("[^0-9]", "");
-        System.out.println(cookingTime);
+        // String cookingTimeStr = "180m";
+        // String cookingTime = cookingTimeStr.replaceAll("[^0-9]", "");
+        // System.out.println(cookingTime);
+
+//        int i = 100;
+//        String b = String.valueOf(a);
+//        System.out.println(b.getClass());
+//
+//        String str = "123";
+//        int i2 = Integer.parseInt(str);
+//        System.out.println(i2);
+        String str1 = "My name is: ";
+        String str2 = "Hug";
+        String str3 = str1.concat(str2);
+        System.out.println(str3);
+
     }
 }
