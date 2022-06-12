@@ -53,32 +53,37 @@ public class StringLearning {
         String badWords = "    mm, cm, dm, bm     ";
 
         // This is ignored
-        badWords.replace("cm", "**");
+        // badWords.replace("cm", "**");
 
         // we need to declare new string
         String filterBadWords = badWords.replace("cm", "**");
         System.out.println(badWords);
 
         // Trim spaces
-        System.out.println(badWords.trim());
+        //System.out.println(badWords.trim());
 
         // SubString, , split
         String w3 = "https://w3school.com";
         // from start to 5, 5 is not in subString
-        System.out.println(w3.substring(0, 5));
+        //System.out.println(w3.substring(0, 5));
         // from x to end
-        w3.substring(5);
+        //w3.substring(5);
 
         // indexOf => return an integer
-        System.out.println(w3.indexOf("l"));
-        System.out.println(w3.indexOf("school"));
+        //System.out.println(w3.indexOf("l"));
+        //System.out.println(w3.indexOf("school"));
 
         // contains => return true or false
-        System.out.println(w3.contains("w3"));
+        //System.out.println(w3.contains("w3"));
 
         // Split
-        String[] splitW3 = w3.split("");
+        //String[] splitW3 = w3.split("");
         String[] splitW3 = w3.split("//");
         System.out.println(Arrays.toString(splitW3));
+
+        // RegularExpression (Regex)
+        String cookingTimeStr = "180m";
+        String cookingTime = cookingTimeStr.replaceAll("[^0-9]", "");
+        System.out.println(cookingTime);
     }
 }
