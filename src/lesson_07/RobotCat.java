@@ -1,18 +1,16 @@
 package lesson_07;
 
-import java.security.PublicKey;
-
-public class RobotCat {
+public class RobotCat extends Grandpa {
 
     private String name;
-    private String age;
+    private String productionDate;
 
     public RobotCat() {
     }
 
-    public RobotCat(String name, String age) {
+    public RobotCat(String name, String productionDate) {
         this.name = name;
-        this.age = age;
+        this.productionDate = productionDate;
     }
 
     public String getName() {
@@ -23,11 +21,23 @@ public class RobotCat {
         this.name = name;
     }
 
-    public String getAge() {
-        return age;
+    public String getProductionDate() {
+        return productionDate;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setProductionDate(String productionDate) {
+        this.productionDate = productionDate;
+    }
+
+    public String charge(){
+        return "charging ";
+    }
+
+    @Override
+    public String toString() {
+        return "RobotCat{" +
+                "name='" + name + '\'' +
+                ", productionDate='" + productionDate + '\'' +
+                '}';
     }
 }
