@@ -1,0 +1,29 @@
+1. Khi có từ khóa static thì nó sẽ là class member
+// Nếu static nằm trong 1 khai báo biến, nó sẽ được gọi là class variable
+// Class member mang ngữ cảnh dùng cho cho tất cả các object được sinh ra từ class này
+// Class
+public class RobotDog {
+    public static int dogId = 0;
+    public void increaseDogId(){
+        dogId++;
+    }
+    public static int getDogId() {
+        return dogId;
+    }
+}
+public class TestRobotDog {
+    public static void main(String[] args) {
+        RobotDog bi = new RobotDog();
+        bi.increaseDogId();
+        //equal 1
+        System.out.println(bi.getDogId());
+
+        RobotDog ben = new RobotDog();
+        ben.increaseDogId();
+
+        //equal 2
+        System.out.println(bi.getDogId());
+        //equal 2
+        System.out.println(ben.getDogId());
+    }
+}
