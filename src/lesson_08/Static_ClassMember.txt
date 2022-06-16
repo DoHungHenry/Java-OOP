@@ -1,9 +1,21 @@
-1. Khi có từ khóa static thì nó sẽ là class member
-// Nếu static nằm trong 1 khai báo biến, nó sẽ được gọi là class variable
-// Class member mang ngữ cảnh dùng cho cho tất cả các object được sinh ra từ class này
-// Class
+1. Class member
+// Khi khai báo 1 thứ gì trong class có từ khóa static thì nó sẽ là class member
+// Lưu ý
+       // Class member mang ngữ cảnh dùng cho cho tất cả các object được sinh ra từ class này
+       // Class member được sinh ra trước khi object được sinh ra (object từ class này), điều này dẫn đến ngữ cảnh SHARED
+       // Class member không được phép gọi đến bất kì thứ gì Non-Static
+       // Nhưng Non-Static có thể gọi bất kì thứ gì Static
+
+2. Class Variable
+//Nếu 1 khai báo biến có Static, nó sẽ được gọi là class variable
+//SHARED:  Bất kì thay đổi nào của biến này phát sinh từ một trong những object
+  (cái mà được sinh ra từ class này) sẽ dẫn đến việc tất cả tất cả các
+  object khác bị thay đổi theo
+
 public class RobotDog {
+    //SHARED
     public static int dogId = 0;
+
     public void increaseDogId(){
         dogId++;
     }
@@ -15,15 +27,34 @@ public class TestRobotDog {
     public static void main(String[] args) {
         RobotDog bi = new RobotDog();
         bi.increaseDogId();
+
         //equal 1
         System.out.println(bi.getDogId());
 
         RobotDog ben = new RobotDog();
         ben.increaseDogId();
 
-        //equal 2
+        //equal 2: SHARED : RobotBi bị ảnh hưởng bỏi việc tăng giá trị từ ben
         System.out.println(bi.getDogId());
         //equal 2
         System.out.println(ben.getDogId());
     }
 }
+
+3. Class method
+public class RobotDog {
+    public static int dogId = 0;
+    public String dogName = "Banh Mi";
+
+    // Non-Static method can refer to a class member(
+    public int getDogId() {
+        return dogId;
+    }
+
+    // Can not refer
+    public static void doSt(){
+        return dogName;
+    }
+}
+
+4. Constructor của class sẽ ko có Static
