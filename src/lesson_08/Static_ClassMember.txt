@@ -58,3 +58,55 @@ public class RobotDog {
 }
 
 4. Constructor của class sẽ ko có Static
+
+5. Thường các utility method sẽ để static để có thể truy cập nhanh mà không cần khởi tạo class
+
+public class UtilityMethod {
+    public static int findMinNum(int[] arr){
+        return 0;
+    }
+
+    public int findMaxNum(int[] ints){
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        // we can call class method to re-use logic directly without initiate new object
+        UtilityMethod.findMinNum(new int[]{});
+
+        // we can't call method to re-use logic directly without initiate new object
+        // UtilityMethod.findMaxNum(new int[]{});
+        // Need to initiate new object from class because findMaxNum() isn't static
+        new UtilityMethod().findMaxNum(new int[]{});
+    }
+}
+
+6. Class member có thể bị override hay không?
+// Có: Class variable có thể override
+// Không: Class method không thể bị override
+
+//Parent class
+public class ConGau {
+    //có thể override
+    public static String name = "gau";
+    //Không thể override
+    public static int tuoiGau(int age){
+        return age;
+    }
+}
+//Child class
+public class ConGauCon extends ConGau {
+    //Static block: override static name của parent class
+    static {
+        name = "gau con";
+    }
+    public static void main(String[] args) {
+        ConGau conGauCon = new ConGauCon();
+        System.out.println(conGauCon.name);
+    }
+}
+
+// Lưu ý: nếu khai báo hai class method giống hệt nhau ở lớp cha và lớp con,
+thì có xảy ra override không, hoặc có xảy ra xung đột ko?
+=> không, vì hai class method này là của 2 class hoàn toàn khác nhau
+và ko liên quan đến nhau, nó trực thuộc 2 class
