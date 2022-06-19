@@ -6,8 +6,10 @@ public class Horse extends Animal {
 
     private final int HORSE_MAX_SPEED = 75;
     private int horseSpeed;
+    private String horseName;
 
-    public Horse() {
+    public Horse(String horseName) {
+        this.horseName = horseName;
         this.horseSpeed = new SecureRandom().nextInt(HORSE_MAX_SPEED);
     }
 
@@ -17,9 +19,15 @@ public class Horse extends Animal {
     }
 
     @Override
+    public String getName() {
+        return this.horseName;
+    }
+
+    @Override
     public String toString() {
         return "Horse{" +
-                "horseSpeed=" + horseSpeed +
+                "horseName='" + horseName +
+                ", horseSpeed=" + horseSpeed + '\'' +
                 '}';
     }
 }

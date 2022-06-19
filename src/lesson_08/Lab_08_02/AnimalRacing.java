@@ -5,12 +5,12 @@ import static lesson_08.Lab_08_02.Animal.animals;
 public class AnimalRacing {
 
     public static void main(String[] args) {
-        Animal horseA = new Horse();
-        Animal dogA = new Dog();
-        Animal tigerA = new Tiger();
-        Animal horseB = new Horse();
-        Animal dogB = new Dog();
-        Animal tigerB = new Tiger();
+        Animal horseA = new Horse("Horse A");
+        Animal dogA = new Dog("Dog A");
+        Animal tigerA = new Tiger("Tiger A");
+        Animal horseB = new Horse("Horse B");
+        Animal dogB = new Dog("Dog B");
+        Animal tigerB = new Tiger("Tiger B");
 
         for (Animal animal : animals) {
             System.out.println(animal);

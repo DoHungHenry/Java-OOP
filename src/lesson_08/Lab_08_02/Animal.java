@@ -6,6 +6,7 @@ import java.util.List;
 public class Animal {
 
     int speed;
+    String name;
 
     public static List<Animal> animals = new ArrayList<>();
 
@@ -13,7 +14,15 @@ public class Animal {
         animals.add(this);
     }
 
+    public Animal(String name) {
+        this.name = name;
+    }
+
     public int getSpeed() {
         return speed;
+    }
+
+    public String getName() {
+        return name;
     }
 }

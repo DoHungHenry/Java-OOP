@@ -6,8 +6,10 @@ public class Tiger extends Animal {
 
     private final int TIGER_MAX_SPEED = 100;
     private int tigerSpeed;
+    private String tigerName;
 
-    public Tiger() {
+    public Tiger(String tigerName) {
+        this.tigerName = tigerName;
         this.tigerSpeed = new SecureRandom().nextInt(TIGER_MAX_SPEED);
     }
 
@@ -17,9 +19,15 @@ public class Tiger extends Animal {
     }
 
     @Override
+    public String getName() {
+        return this.tigerName;
+    }
+
+    @Override
     public String toString() {
         return "Tiger{" +
-                "tigerSpeed=" + tigerSpeed +
+                "tigerName='" + tigerName +
+                ", tigerSpeed=" + tigerSpeed + '\'' +
                 '}';
     }
 }
