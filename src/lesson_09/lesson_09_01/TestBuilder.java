@@ -18,6 +18,8 @@ public class TestBuilder {
         builder2.setWindow(3);
         HouseWithBuilder house2 = builder2.build();
 
+        //Method chaining
+
         for (HouseWithBuilder house : houseList) {
             System.out.println(house);
         }

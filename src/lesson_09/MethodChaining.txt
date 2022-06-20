@@ -1,0 +1,4 @@
+1. Context: khai báo set biến trong 1 dòng bởi các chaining
+2. Cách tiến hành:
+    // Biến đổi hàm set thành 1 hàm mà nó trả về builder đó, sau đó hàm set tiếp theo sẽ nối vào và cũng trả về 1 builder đó
+    // Method:
