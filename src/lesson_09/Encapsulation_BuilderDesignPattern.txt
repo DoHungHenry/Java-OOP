@@ -1,0 +1,65 @@
+1. Việc cho phép người dùng access vào class và set giá trị trực tiếp
+cho object được sinh ra dẫn đến việc không thể control được giá trị đầu vào
+public class Person {
+    public String name;
+    public int age;
+    public String getName() {
+        return name;
+    }
+    public int getAge() {
+        return age;
+    }
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+}
+
+public class TestPerson {
+    public static void main(String[] args) {
+        Person teo = new Person();
+        teo.name = "teo";
+        //giá trị này không thể control vì người dùng access và set giá trị trực tiếp
+        teo.age = -19;
+        System.out.println(teo);
+    }
+}
+
+2. Encapsulation là kĩ thuật ẩn tất cả các class attribute bằng từ khóa private và control nó theo mong muốn
+// Class được thiết kế chỉ có contructor và các setAttribute (setter) (class này chỉ cung cấp việc set giá trị - write only)
+// Các getAttribute (getter)
+
+3. Builder design pattern
+// Design pattern là gì: là ý tưởng thiết kế class để phục vụ cho việc giải quyết một bài toán cụ thể
+// Context: Một bản thiết kế được design và không thể thay đổi, bản thiết kế này được thực thi bởi 1 class khác
+// Builder Design Pattern
+    // Context: khi một có class có hàng chục class attribute, khi đó với mỗi một yêu cầu cụ thể về thiết kế
+    sẽ cần một constructor cụ thể, và chúng ta cần overloading rất nhiều constructor để phù hợp với mỗi yêu cầu cụ thể
+    // Ví dụ một ngôi nhà có hàng chục class attribute: internalWallColor, externalWallColor, mainDoorCount, windowCount,
+    topRoofMaterial, topRoofColor, floorTile, etc...
+        => mỗi một ngôi nhà mới sẽ cần một bản thiết kế cụ thể, và sẽ có một số class attribut được yêu cầu cụ thể
+        => PROBLEM: khi đó sẽ xảy ra tình huống overloading rất nhiều lần vì mỗi một bản design cho một ngôi nhà cụ thể
+        cần một constructor cụ thể
+
+        lesson_09_01.House giải pháp 1: tạo 1 constructor đầy đủ đối số với if else để control giá trị đầu vào của từng class attribute
+        => disadvantage của giái pháp 1: khi có quá nhiều class attribute và có thể datatype của nó giống nhau,
+        thì khi khởi tạo 1 object mới dẫn đến việc nhầm lẫn và cần so sánh đối chiếu rất nhiều lần
+
+        lesson_09_02.House2 giải pháp 2: chỉ khai báo setter cho tất cả các class attribute, mỗi khi khởi tạo một object mới từ class này,
+        cho phép người dùng access vào tất cả các setter để set giá trị cho object mới này
+        => disadvantage của giải pháp 2: việc tạo immutable object sẽ không thể thực hiện vì object sau khi khởi tạo vẫn có thể thay đổi
+
+    // Builder Design Pattern là 1 giải pháp thiết kế class để sau khi khởi tạo object từ class, nó sẽ là 1 immutable object
+        // Builder Design Pattern = Read-only part + Write-only part
+        // Example: Một constructor có nhiều Builder team (Read-only) và CustomerService team, khách hàng không thể gặp trực tiếp builder team để yêu cầu họ làm theo ý mình
+        mà cần phải có một bản thiết kế, khách hàng chỉ được phép tạo/thay đổi bản thiết kế bằng cách làm việc với CustomerService team (Write-only part)
+        // lesson_09_01.HouseWithBuilder:
+            // First: Khai báo một protected constructor để nó ghi đè default public constructor của class
+            // Thiết kế 1 Inner class (ngữ cảnh là thiết kế CustomerService, và nó chỉ có nhiệm vụ Write-only: đội customer service sẽ đi lấy thông tin từ
+            khách hàng, sau đó sẽ ghi xuống, build ra một bản design (Builder), trả nó về và truyền vào protected constructor
+            // Advantage of Builder Design Pattern:
+                1. Có thể set giá trị chô mỗi object trong khi init nó
+                2. Mỗi object sau khi init sẽ là immutable

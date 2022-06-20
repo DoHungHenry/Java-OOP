@@ -1,0 +1,2 @@
+1. Fully control object data
+2. Object có nhiều attribute lúc có lúc ko khi sinh ra,
