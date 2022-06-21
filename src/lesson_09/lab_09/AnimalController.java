@@ -1,23 +1,37 @@
 package lesson_09.lab_09;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.List;
 
 public class AnimalController {
-    public List<Animal> noWingAnimal(List<Animal> animalList){
-        List<Animal> noWingAnimal = new ArrayList<>();
+    public List<Animal> noWingAnimals(List<Animal> animalList){
+        List<Animal> noWingAnimals = new ArrayList<>();
         for (Animal animal : animalList) {
             if (!animal.isFlyable()){
-                noWingAnimal.add(animal);
+                noWingAnimals.add(animal);
             }
         }
-        return noWingAnimal;
+        return noWingAnimals;
     }
 
-    public void fastestAnimal(List<Animal> animalList1){
-        Animal fastestNoWingAnimal = animalList1.stream().max(Comparator.comparingInt(Animal::getSpeed)).get();
-        System.out.println("Winner is: " + fastestNoWingAnimal.getName() + " with speed is: " + fastestNoWingAnimal.getSpeed());
+    public List<Animal> fastestNoWingAnimals(List<Animal> animals){
+        List<Animal> fastestNoWingAnimals = new ArrayList<>();
+        List<Integer> noWingAnimalSpeeds = new ArrayList<>();
+        for (Animal animal : animals) {
+            noWingAnimalSpeeds.add(animal.getSpeed());
+            Integer highestSpeed = Collections.max(noWingAnimalSpeeds);
+            if (animal.getSpeed() == highestSpeed){
+                fastestNoWingAnimals.add(animal);
+            }
+        }
+        System.out.println(noWingAnimalSpeeds);
+        return fastestNoWingAnimals;
+    }
+
+    public void printWinner(List<Animal> animals){
+        for (Animal animal : animals) {
+            System.out.println("Winner is: " + animal.getName() + " with speed is: " + animal.getSpeed());
+        }
     }
 }
