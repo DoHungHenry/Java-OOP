@@ -15,8 +15,9 @@ public class AnimalRacing {
         for (Animal animal : animals) {
             System.out.println(animal);
         }
+        System.out.println();
 
         AnimalController animalController = new AnimalController();
-        animalController.findFastestAnimal();
+        animalController.findFastestAnimal(animals);
     }
 }

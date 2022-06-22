@@ -1,12 +1,16 @@
 package lesson_08.Lab_08_02;
 
-import java.util.Comparator;
-
-import static lesson_08.Lab_08_02.Animal.animals;
+import java.util.List;
 
 public class AnimalController {
-    public void findFastestAnimal(){
-        Animal fastestAnimal = animals.stream().max(Comparator.comparingInt(Animal::getSpeed)).get();
-        System.out.println("Winner is: " + fastestAnimal.getName() + " with speed is: " + fastestAnimal.getSpeed());
+
+    public void findFastestAnimal(List<Animal> animalList){
+        Animal animal = animalList.get(0);
+        for (Animal a : animalList) {
+            if (animal.getSpeed() < a.getSpeed()){
+                animal = a;
+            }
+        }
+        System.out.println("Winner is: " + animal.getName() + " with speed is: " + animal.getSpeed());
     }
 }
