@@ -27,18 +27,12 @@ public class AnimalRacing {
         Animal FalconB = builder.setName("Falcon B").setSpeed(FALCON_MAX_SPEED).setFlyable(true).build();
 
         for (Animal animal : animalList) {
-            System.out.println(animal);
+            System.out.println("All animal are" + animal);
         }
+        System.out.println();
 
         AnimalController animalController = new AnimalController();
-
         List<Animal> noWingAnimals = animalController.noWingAnimals(animalList);
-//        System.out.println("\t" +  "No wing animals are: ");
-//        for (Animal animal : noWingAnimals) {
-//            System.out.println(animal);
-//        }
-
-        List<Animal> fastestNoWingAnimals = animalController.fastestNoWingAnimals(noWingAnimals);
-        animalController.printWinner(fastestNoWingAnimals);
+        animalController.fastestNoWingAnimal(noWingAnimals);
     }
 }
