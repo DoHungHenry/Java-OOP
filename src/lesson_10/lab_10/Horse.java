@@ -5,8 +5,8 @@ import java.util.List;
 
 public abstract class Horse {
 
-    private String name;
-    private int speed;
+    protected String name;
+    protected int speed;
 
     public static List<Horse> horses = new ArrayList<>();
 
