@@ -8,15 +8,9 @@ public class BlackHorse extends Horse {
     private int blackHorseSpeed;
     private String name;
 
-    @Override
-    public Horse setName(String name) {
+    public BlackHorse(String name) {
         this.name = name;
-        return this;
-    }
-
-    @Override
-    public int setSpeed(){
-        return this.blackHorseSpeed = new SecureRandom().nextInt(BLACK_HORSE_MAX_SPEED);
+        this.blackHorseSpeed  = new SecureRandom().nextInt(BLACK_HORSE_MAX_SPEED);
     }
 
     @Override
