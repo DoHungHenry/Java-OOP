@@ -2,3 +2,5 @@
 2. Protected
 3. Default
 4. Private
+
+5. Note: Một lớp không thể là private hoặc protected, ngoại trừ lớp lồng nhau.
