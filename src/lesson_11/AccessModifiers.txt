@@ -1,6 +1,10 @@
 1. Public
 2. Protected
+// Child class can use the protected method from parent when it's declared: Child child = new Child();
+// protected method of parent can't be accessed: Parent child = new Child();
+
 3. Default
 4. Private
+// private constructor of parent => compile time error when init a new object based on class constructor
 
 5. Note: Một lớp không thể là private hoặc protected, ngoại trừ lớp lồng nhau.
