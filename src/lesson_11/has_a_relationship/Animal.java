@@ -3,7 +3,7 @@ package lesson_11.has_a_relationship;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Animal {
+public class Animal implements ISwimAble, IFlyAble {
 
     private String name;
     private int speed;
@@ -36,5 +36,15 @@ public class Animal {
                 "name='" + name + '\'' +
                 ", speed=" + speed +
                 '}';
+    }
+
+    @Override
+    public boolean isFlyAble() {
+        return false;
+    }
+
+    @Override
+    public boolean isSwimAble() {
+        return false;
     }
 }

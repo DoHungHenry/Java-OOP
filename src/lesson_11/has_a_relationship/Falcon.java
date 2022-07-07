@@ -6,7 +6,6 @@ public class Falcon extends Animal implements IFlyAble {
 
     private String name;
     private int falconSpeed;
-    private boolean flyAble = true;
 
     private final int FALCON_MAX_SPEED = 120;
 
@@ -16,7 +15,25 @@ public class Falcon extends Animal implements IFlyAble {
     }
 
     @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public int getSpeed() {
+        return this.falconSpeed;
+    }
+
+    @Override
     public boolean isFlyAble() {
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Falcon{" +
+                "name='" + name + '\'' +
+                ", falconSpeed=" + falconSpeed +
+                '}';
     }
 }
