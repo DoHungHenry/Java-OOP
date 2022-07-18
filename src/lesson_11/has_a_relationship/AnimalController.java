@@ -25,7 +25,6 @@ public class AnimalController {
         return list;
     }
 
-
     public List<Animal> flyAbleAnimals(List<Animal> animals){
         List<Animal> list = new ArrayList<>();
         for (Animal animal : animals) {

@@ -1,0 +1,12 @@
+1.
+//trong 1 interface, các method là: public abstract
+vd: (public abstract) void doSt();
+
+//hoặc static:
+vd: (public) static void doSt(){};
+
+// từ Java 8, có thêm default method => method này phát sinh để chữa cháy cho việc business phát sinh
+
+vd: default void doSt(){};
+
+

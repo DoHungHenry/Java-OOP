@@ -1,0 +1,10 @@
+1. Strategy Pattern là một trong những Pattern thuộc nhóm hành vi (Behavior Pattern).
+Nó cho phép định nghĩa tập hợp các thuật toán, đóng gói từng thuật toán lại,
+và dễ dàng thay đổi linh hoạt các thuật toán bên trong object.
+Strategy cho phép thuật toán biến đổi độc lập khi người dùng sử dụng chúng.
+
+Ý nghĩa thực sự của Strategy Pattern là giúp tách rời phần xử lý một chức năng cụ thể ra khỏi đối tượng.
+Sau đó tạo ra một tập hợp các thuật toán để xử lý chức năng đó và lựa chọn thuật toán nào mà chúng ta thấy đúng đắn nhất khi thực thi chương trình.
+
+2. Ví dụ
+https://gpcoder.com/4796-huong-dan-java-design-pattern-strategy/

@@ -1,8 +1,8 @@
-package lesson_11.Comparable;
+package lesson_11.comparable;
 
 import java.util.Collections;
 
-import static lesson_11.Comparable.Employee.employees;
+import static lesson_11.comparable.Employee.employees;
 
 public class SortEmployeeBySalary {
 

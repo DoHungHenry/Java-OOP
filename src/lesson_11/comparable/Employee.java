@@ -1,6 +1,4 @@
-package lesson_11.Comparable;
-
-import org.jetbrains.annotations.NotNull;
+package lesson_11.comparable;
 
 import java.util.ArrayList;
 import java.util.List;
